@@ -1,0 +1,32 @@
+- defaults:
+    link:
+      create: true
+      relink: true
+- clean: ['~']
+- link:
+    ~/.gitconfig:
+      path: gitconfig
+      force: true
+    ~/.zshrc:
+      path: zshrc
+      force: true 
+    ~/.pydistutils.cfg:
+      path: python/pydistutils.cfg 
+      force: true 
+    ~/.pip:
+      path: python/pip
+      force: true 
+    ~/.config/mpv:
+      path: mpv
+      force: true 
+    ~/.bin:
+      path: bin
+      force: true 
+    ~/.config/youtube-dl:
+      path: youtube-dl
+      force: true
+    ~/.cow:
+      path: cow
+      force: true
+- shell: 
+  - [git submodule update --init --recursive, Installing submodules]
