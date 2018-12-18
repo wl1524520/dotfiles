@@ -25,16 +25,11 @@ link:
 	@./install
 
 fonts:
-	-sudo pacman -S ttf-roboto noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra awesome-terminal-fonts adobe-source-han-sans-cn-fonts adobe-source-han-serif-cn-fonts ttf-dejavu
-	-sudo pacman -S nerd-fonts-complete
-	-sudo pacman -S nerd-fonts-terminus powerline-fonts
+	-sudo apt install fonts-roboto fonts-noto fonts-noto-mono fonts-noto-cjk fonts-noto-color-emoji fonts-font-awesome fonts-powerline
 	@fc-cache --force --verbose
 
 fcitx:
 	@sudo pacman -S fcitx fcitx-configtool fcitx-gtk3 fcitx-qt4 fcitx-qt5 fcitx-googlepinyin fcitx-table-extra
-
-arch-xorg:
-	@sudo pacman -S xorg-server xorg-server-utils xorg-xrandr xorg-xset
 
 env:
 	@sudo pacman -S screenfetch pkg-config go clang llvm llvm-libs cmake npm nodejs fakeroot
