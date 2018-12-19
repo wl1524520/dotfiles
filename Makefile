@@ -6,6 +6,7 @@ help:
 	@echo ""
 	@echo "   1. make update        - Update submodule repository"
 	@echo "   2. make link          - Install dotfiles link"
+	@echo "   2. make wps           - Install WPS symbol Fonts"
 	@echo ""
 
 update:
@@ -20,3 +21,7 @@ update:
 link:
 	@echo "Start set for normal user"
 	@./install
+
+wps:
+	@sudo cp -r fonts/wps-symbol-fonts /usr/share/fonts
+	@fc-cache --force --verbose
