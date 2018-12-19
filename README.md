@@ -23,5 +23,16 @@ git submodule add https://github.com/robbyrussell/oh-my-zsh.git
 git submodule update --init --remote
 ```
 
+## 设置默认 python 版本
+直接执行这两个命令即可：
+```bash
+sudo update-alternatives --install /usr/bin/python python /usr/bin/python2 100
+sudo update-alternatives --install /usr/bin/python python /usr/bin/python3 150
+```
+如果要切换到Python2，执行：
+```bash
+sudo update-alternatives --config python
+```
+
 ## termite config sample
 https://github.com/khamer/base16-termite
