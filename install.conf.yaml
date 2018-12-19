@@ -16,8 +16,8 @@
     ~/.pip:
       path: python/pip
       force: true 
-    ~/.config/mpv:
-      path: mpv
+    ~/.config/mpv/mpv.conf:
+      path: mpv/mpv.conf
       force: true 
     ~/.bin:
       path: bin
