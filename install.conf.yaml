@@ -28,5 +28,11 @@
     ~/.cow:
       path: cow
       force: true
+    ~/.config/sublime-text-3:
+      path: editor/sublime-text-3
+      force: true
+    ~/.atom:
+      path: editor/atom
+      force: true
 - shell: 
   - [git submodule update --init --recursive, Installing submodules]

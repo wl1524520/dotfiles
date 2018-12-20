@@ -6,7 +6,7 @@ sudo apt autoremove
 sudo apt update
 
 # 安装必要的程序
-sudo apt install zsh openssh-server make git screenfetch vim vim-youcompleteme mpv youtube-dl aria2 hollywood
+sudo apt install zsh openssh-server make git screenfetch vim vim-youcompleteme mpv youtube-dl aria2 hollywood sublime-text
 sudo apt install python-pip python3-pip
 
 # 启用 ssh 服务

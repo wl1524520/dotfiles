@@ -1,0 +1,118 @@
+{
+  "_from": "file:/tmp/d-118214-25509-1idb8nh.zaa4/package.tgz",
+  "_id": "docblockr@0.13.7",
+  "_inBundle": false,
+  "_integrity": "sha512-vpQGcDrVwn95ZNKawFTO3boQCvZm15SAWaaCpbqeCJIaIjLBFDPlVmHiJfs+SW0rOmGemz5cflgfXe/5etWgZw==",
+  "_location": "/docblockr",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "file",
+    "where": "/tmp/apm-install-dir-118214-25509-lx074.xkwzwo",
+    "raw": "/tmp/d-118214-25509-1idb8nh.zaa4/package.tgz",
+    "rawSpec": "/tmp/d-118214-25509-1idb8nh.zaa4/package.tgz",
+    "saveSpec": "file:/tmp/d-118214-25509-1idb8nh.zaa4/package.tgz",
+    "fetchSpec": "/tmp/d-118214-25509-1idb8nh.zaa4/package.tgz"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "/tmp/d-118214-25509-1idb8nh.zaa4/package.tgz",
+  "_spec": "/tmp/d-118214-25509-1idb8nh.zaa4/package.tgz",
+  "_where": "/tmp/apm-install-dir-118214-25509-lx074.xkwzwo",
+  "atomTestRunner": "./spec/runner",
+  "bugs": {
+    "url": "https://github.com/nikhilkalige/docblockr/issues"
+  },
+  "bundleDependencies": false,
+  "consumedServices": {
+    "snippets": {
+      "versions": {
+        "^0.1.0": "consumeSnippetsService"
+      }
+    }
+  },
+  "dependencies": {
+    "xregexp": "^3.2.0"
+  },
+  "deprecated": false,
+  "description": "A helper package for writing documentation",
+  "devDependencies": {
+    "atom-mocha-test-runner": "0.2.2",
+    "chai": "^3.5.0",
+    "eslint": "^4.10.0",
+    "js-yaml": "^3.6.1"
+  },
+  "engines": {
+    "atom": ">0.50.0"
+  },
+  "homepage": "https://github.com/nikhilkalige/docblockr#readme",
+  "license": "MIT",
+  "main": "./lib/docblockr.js",
+  "name": "docblockr",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nikhilkalige/docblockr.git"
+  },
+  "scripts": {
+    "lint": "eslint ./",
+    "test": "cd ~/.atom/packages; atom --test docblockr/spec"
+  },
+  "version": "0.13.7",
+  "_atomModuleCache": {
+    "version": 1,
+    "dependencies": [
+      {
+        "name": "xregexp",
+        "version": "3.2.0",
+        "path": "node_modules/xregexp/xregexp-all.js"
+      }
+    ],
+    "extensions": {
+      ".js": [
+        "lib/docblockr-worker.js",
+        "lib/docblockr.js",
+        "lib/docsparser.js",
+        "lib/languages/actionscript.js",
+        "lib/languages/coffee.js",
+        "lib/languages/cpp.js",
+        "lib/languages/java.js",
+        "lib/languages/javascript.js",
+        "lib/languages/objc.js",
+        "lib/languages/php.js",
+        "lib/languages/processing.js",
+        "lib/languages/rust.js",
+        "lib/languages/sass.js",
+        "lib/languages/typescript.js",
+        "lib/utils.js",
+        "node_modules/xregexp/src/addons/build.js",
+        "node_modules/xregexp/src/addons/matchrecursive.js",
+        "node_modules/xregexp/src/addons/unicode-base.js",
+        "node_modules/xregexp/src/addons/unicode-blocks.js",
+        "node_modules/xregexp/src/addons/unicode-categories.js",
+        "node_modules/xregexp/src/addons/unicode-properties.js",
+        "node_modules/xregexp/src/addons/unicode-scripts.js",
+        "node_modules/xregexp/src/index.js",
+        "node_modules/xregexp/src/xregexp.js",
+        "node_modules/xregexp/xregexp-all.js"
+      ],
+      ".json": [
+        "node_modules/xregexp/package.json",
+        "package.json"
+      ]
+    },
+    "folders": [
+      {
+        "paths": [
+          "keymaps",
+          "lib",
+          "lib/languages",
+          "",
+          "spec"
+        ],
+        "dependencies": {
+          "xregexp": "^3.2.0"
+        }
+      }
+    ]
+  }
+}
