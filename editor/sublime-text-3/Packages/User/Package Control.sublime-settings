@@ -6,6 +6,7 @@
 	"installed_packages":
 	[
 		"DocBlockr",
+		"DotENV",
 		"EditorConfig",
 		"Emmet",
 		"GitGutter",
