@@ -1,8 +1,8 @@
 {
+	"font_face": "Noto Sans Mono",
+	"font_size": 14,
 	"ignored_packages":
 	[
 		"Vintage"
-	],
-	"font_face": "Noto Sans Mono",
-	"font_size": 14
+	]
 }

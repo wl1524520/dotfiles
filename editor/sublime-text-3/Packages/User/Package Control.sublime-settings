@@ -5,7 +5,10 @@
 	],
 	"installed_packages":
 	[
+		"DocBlockr",
 		"EditorConfig",
+		"Emmet",
+		"GitGutter",
 		"Package Control"
 	]
 }
