@@ -8,10 +8,10 @@
       path: zshrc
       force: true 
     ~/.pydistutils.cfg:
-      path: python/pydistutils.cfg 
+      path: conf.d/python/pydistutils.cfg 
       force: true 
-    ~/.pip:
-      path: python/pip
+    ~/.pip/pip.conf:
+      path: conf.d/python/pip.conf
       force: true 
     ~/.bin:
       path: bin
