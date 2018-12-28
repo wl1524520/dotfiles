@@ -4,9 +4,6 @@
       relink: true
 - clean: ['~']
 - link:
-    ~/.gitconfig:
-      path: gitconfig
-      force: true
     ~/.zshrc:
       path: zshrc
       force: true 
@@ -16,11 +13,14 @@
     ~/.pip:
       path: python/pip
       force: true 
-    ~/.config/mpv/mpv.conf:
-      path: conf.d/mpv.conf
-      force: true 
     ~/.bin:
       path: bin
+      force: true 
+    ~/.gitconfig:
+      path: conf.d/gitconfig
+      force: true
+    ~/.config/mpv/mpv.conf:
+      path: conf.d/mpv.conf
       force: true 
     ~/.config/youtube-dl/config:
       path: conf.d/youtube-dl.config
