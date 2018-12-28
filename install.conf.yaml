@@ -17,16 +17,16 @@
       path: python/pip
       force: true 
     ~/.config/mpv/mpv.conf:
-      path: mpv/mpv.conf
+      path: conf.d/mpv.conf
       force: true 
     ~/.bin:
       path: bin
       force: true 
-    ~/.config/youtube-dl:
-      path: youtube-dl
+    ~/.config/youtube-dl/config:
+      path: conf.d/youtube-dl.config
       force: true
     ~/.cow/rc:
-      path: cow/rc
+      path: conf.d/cow.rc
       force: true
     ~/.config/sublime-text-3:
       path: editor/sublime-text-3
