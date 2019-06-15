@@ -1,4 +1,4 @@
-# Dotfiles 仓库 (Debian/Ubuntu/Mint/LMDE)
+# Dotfiles 仓库 (Debian/Ubuntu/Mint/LMDE/CentOS/macOS)
 
 To keep submodules at their proper versions, you could include something like
 `git submodule update --init --recursive` in your `install.conf.yaml`.
@@ -6,7 +6,7 @@ To keep submodules at their proper versions, you could include something like
 ## 安装
 ```bash
 # 1. 克隆仓库到本地
-git clone https://github.com/wl1524520/ubuntu-dotfiles.git ~/.dotfiles
+git clone https://github.com/wl1524520/dotfiles.git ~/.dotfiles
 # 2. 进入 .dotfiles 文件夹
 cd ~/.dotfiles
 # 3. 开始安装
@@ -34,5 +34,3 @@ sudo update-alternatives --install /usr/bin/python python /usr/bin/python3 150
 sudo update-alternatives --config python
 ```
 
-## termite config sample
-https://github.com/khamer/base16-termite
