@@ -1,0 +1,14 @@
+# macOS library
+export DYLD_LIBRARY_PATH=/usr/local/mysql/lib:$DYLD_LIBRARY_PATH
+
+export PATH=$PATH:$HOME/bin:/usr/local/mysql/bin
+setopt no_nomatch
+
+export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+
+if [ $commands[qshell] ]; then
+  source <(qshell completion zsh)
+fi
