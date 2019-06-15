@@ -23,5 +23,5 @@ link:
 	@./install
 
 wps:
-	@sudo cp -r fonts/wps-symbol-fonts /usr/share/fonts
+	@sudo cp -r font.d/wps-symbol-fonts /usr/share/fonts
 	@fc-cache --force --verbose

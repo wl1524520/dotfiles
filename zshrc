@@ -84,18 +84,10 @@ export LC_ALL=en_US.UTF-8
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias w='w -i'
 
-if type nvim > /dev/null 2>&1; then
-    alias vim='nvim'
-    alias vi='nvim'
-else
-    alias vi='vim'
+if [ -f "$HOME/.profile"  ]; then
+    source $HOME/.profile
 fi
-#alias google-earth='LANGUAGE=zh-Hans google-earth &'
 
-export GOPATH=~/go
-export VISUAL="vim"
-setopt no_nomatch
+source $HOME/.user_profile
 
-export TERM=xterm-color

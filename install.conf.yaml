@@ -7,6 +7,9 @@
     ~/.zshrc:
       path: zshrc
       force: true 
+    ~/.user_profile:
+      path: profile.d/user_profile
+      force: true 
     ~/.pydistutils.cfg:
       path: conf.d/python/pydistutils.cfg 
       force: true 
@@ -24,15 +27,6 @@
       force: true 
     ~/.config/youtube-dl/config:
       path: conf.d/youtube-dl.config
-      force: true
-    ~/.cow/rc:
-      path: conf.d/cow.rc
-      force: true
-    ~/.config/sublime-text-3:
-      path: editor/sublime-text-3
-      force: true
-    ~/.atom:
-      path: editor/atom
       force: true
 - shell: 
   - [git submodule update --init --recursive, Installing submodules]
