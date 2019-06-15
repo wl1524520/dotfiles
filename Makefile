@@ -25,3 +25,6 @@ link:
 wps:
 	@sudo cp -r font.d/wps-symbol-fonts /usr/share/fonts
 	@fc-cache --force --verbose
+
+xprofile:
+	@ln -sf xprofile ~/.xprofile 
