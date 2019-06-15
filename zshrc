@@ -85,9 +85,16 @@ export LC_ALL=en_US.UTF-8
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-if [ -f "$HOME/.profile"  ]; then
-    source $HOME/.profile
+# For Ubuntu
+if [ -f ~/.profile  ]; then
+    source ~/.profile
 fi
 
-source $HOME/.user_profile
+# For CentOS
+if [ -f ~/.bash_profile  ]; then
+    source ~/.bash_profile
+fi
+
+# user profile
+source ~/.user_profile
 
