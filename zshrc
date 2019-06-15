@@ -95,9 +95,10 @@ if [ -f ~/.bash_profile  ]; then
     source ~/.bash_profile
 fi
 
-if [ `uname` == 'Darwin' ]; then
+# For macOS
+if [ `uname` = 'Darwin' ]; then
     source ~/.dotfiles/profile.d/mac_profile
 fi
 
-source ~/.user_profile
+source ~/.dotfiles/profile.d/user_profile
 
