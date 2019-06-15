@@ -4,6 +4,9 @@
       relink: true
 - clean: ['~']
 - link:
+    ~/.bin:
+      path: bin
+      force: true 
     ~/.zshrc:
       path: zshrc
       force: true 
@@ -15,9 +18,6 @@
       force: true 
     ~/.pip/pip.conf:
       path: conf.d/python/pip.conf
-      force: true 
-    ~/.bin:
-      path: bin
       force: true 
     ~/.gitconfig:
       path: conf.d/gitconfig
