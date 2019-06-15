@@ -1,4 +1,4 @@
-# Dotfiles 仓库 (Debian/Ubuntu/Mint/LMDE/CentOS/macOS)
+# Dotfiles 仓库 (Debian/Ubuntu/Mint/LMDE/CentOS/macOS/Arch/Manjaro)
 
 To keep submodules at their proper versions, you could include something like
 `git submodule update --init --recursive` in your `install.conf.yaml`.
