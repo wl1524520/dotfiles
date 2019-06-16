@@ -3,7 +3,7 @@
 To keep submodules at their proper versions, you could include something like
 `git submodule update --init --recursive` in your `install.conf.yaml`.
 
-## 1. 安装
+## 一、安装
 ```bash
 # 1. 克隆仓库到本地
 git clone https://github.com/wl1524520/dotfiles.git ~/.dotfiles
@@ -13,7 +13,7 @@ cd ~/.dotfiles
 make link
 ```
 
-## 2. VIM 配置文件
+## 二、VIM 配置文件
 本配置文件适用于 vim 和 neovim ， 其它类 vim 编辑器未做测试
 
 ### 2.1 插件管理
@@ -33,7 +33,7 @@ jiangmiao/auto-pairs | 自动补全配对的括号等
 itchyny/lightline.vim | 底部状态栏
 morhetz/gruvbox | 主题
 
-## submodule
+## 三、submodule
 ```bash
 # add submodule
 git submodule add https://github.com/anishathalye/dotbot.git
@@ -43,7 +43,7 @@ git submodule add https://github.com/robbyrussell/oh-my-zsh.git
 git submodule update --init --remote
 ```
 
-## 设置默认 python 版本
+## 四、设置默认 python 版本
 直接执行这两个命令即可：
 ```bash
 sudo update-alternatives --install /usr/bin/python python /usr/bin/python2 100
