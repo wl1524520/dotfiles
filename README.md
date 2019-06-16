@@ -1,16 +1,18 @@
-# Dotfiles 仓库 (Debian/Ubuntu/Mint/LMDE/CentOS/macOS/Arch/Manjaro)
-
-To keep submodules at their proper versions, you could include something like
-`git submodule update --init --recursive` in your `install.conf.yaml`.
+# Dotfiles 仓库
+支持的系统：Debian/Ubuntu/Mint/LMDE/CentOS/macOS/Arch/Manjaro
 
 ## 一、安装
 ```bash
 # 1. 克隆仓库到本地
 git clone https://github.com/wl1524520/dotfiles.git ~/.dotfiles
+
 # 2. 进入 .dotfiles 文件夹
 cd ~/.dotfiles
+
 # 3. 开始安装
+make update
 make link
+make vim
 ```
 
 ## 二、VIM 配置文件
