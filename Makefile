@@ -12,9 +12,6 @@ update:
 	@echo "Start to update submodule repository"
 	@git submodule update --init --remote
 	@echo "End to update submodule repository"
-	@echo "Start to Update install script"
-	@rm -rf install && cp dotbot/tools/git-submodule/install .
-	@echo "End to Update install script"
 	@echo ""
 
 link:
@@ -25,5 +22,3 @@ wps:
 	@sudo cp -r font.d/wps-symbol-fonts /usr/share/fonts
 	@fc-cache --force --verbose
 
-xprofile:
-	@ln -sf xprofile ~/.xprofile 
