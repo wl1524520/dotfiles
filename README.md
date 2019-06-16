@@ -25,7 +25,7 @@ make vim
 :PluginClean | 清理不用的插件
 :PluginUpdate | 更新已有插件
 
-### 2.2插件列表
+### 2.2 插件列表
 插件 | 功能
 ---|---
 ervandew/supertab | SuperTab使Tab快捷键具有更快捷的上下文提示功能。 也就是一种自动补全插件。
@@ -34,14 +34,14 @@ SirVer/ultisnips | 自动补全代码
 jiangmiao/auto-pairs | 自动补全配对的括号等
 itchyny/lightline.vim | 底部状态栏
 morhetz/gruvbox | 主题
+posva/vim-vue | vue 语法高亮
 
-## 三、submodule
+## 三、子模块添加与更新
 ```bash
-# add submodule
-git submodule add https://github.com/anishathalye/dotbot.git
+# 添加
 git submodule add https://github.com/robbyrussell/oh-my-zsh.git
 
-# update submodule
+# 更新
 git submodule update --init --remote
 ```
 
