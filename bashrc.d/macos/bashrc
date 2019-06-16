@@ -2,7 +2,6 @@
 export DYLD_LIBRARY_PATH=/usr/local/mysql/lib:$DYLD_LIBRARY_PATH
 
 export PATH=$PATH:$HOME/bin:/usr/local/mysql/bin
-setopt no_nomatch
 
 export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles
 

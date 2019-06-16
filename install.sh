@@ -7,7 +7,11 @@ fi
 
 BASE_DIR=$HOME/.dotfiles
 
+<<<<<<< HEAD
 ln -sf $BASE_DIR/tools $HOME/.bin
+=======
+ln -sf $BASE_DIR/bin/ $HOME/.bin
+>>>>>>> dcc0109d1855e7a1557a2b09dc2022f264e4c65d
 
 # zsh
 ln -sf $BASE_DIR/zshrc $HOME/.zshrc
