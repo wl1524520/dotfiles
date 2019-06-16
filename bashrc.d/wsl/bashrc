@@ -1,0 +1,13 @@
+# .bashrc wsl
+
+# User specific aliases and functions
+
+alias cdc='cd /mnt/c'
+alias cdd='cd /mnt/d'
+alias cde='cd /mnt/e'
+
+# Launch Zsh
+if [ -t 1  ]; then
+    exec zsh
+fi
+

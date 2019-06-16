@@ -85,20 +85,5 @@ export LC_ALL=en_US.UTF-8
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# For Ubuntu
-if [ -f ~/.profile  ]; then
-    source ~/.profile
-fi
-
-# For CentOS
-if [ -f ~/.bash_profile  ]; then
-    source ~/.bash_profile
-fi
-
-# For macOS
-if [ `uname` = 'Darwin' ]; then
-    source ~/.dotfiles/profile.d/mac_profile
-fi
-
-source ~/.dotfiles/profile.d/user_profile
+source ~/.dotfiles/bashrc.d/bashrc
 

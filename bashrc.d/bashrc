@@ -1,4 +1,4 @@
-# zshrc/bashrc ext profile
+# bashrc.d/bashrc ext profile
 
 setopt no_nomatch
 
@@ -11,12 +11,23 @@ else
     alias vi='vim'
 fi
 
-alias cdc='cd /mnt/c'
-alias cdd='cd /mnt/d'
-alias cde='cd /mnt/e'
-
 export GOPATH=~/go
 export VISUAL="vim"
 export TERM=xterm-color
 export NODE_MIRROR=https://mirrors.tuna.tsinghua.edu.cn/nodejs-release/
 export PATH=$PATH:$HOME/.bin
+
+# For Linux
+if [ `uname` = 'Linux' ]; then
+    source ~/.dotfiles/bashrc.d/linux/bashrc
+fi
+
+# For macOS
+if [ `uname` = 'Darwin' ]; then
+    source ~/.dotfiles/bashrc.d/macos/bashrc
+fi
+
+# For user
+if [ -f ~/.profile  ]; then
+    source ~/.profile
+fi
