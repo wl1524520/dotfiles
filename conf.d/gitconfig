@@ -1,3 +1,6 @@
 [user]
 	email = wl1524520@gmail.com
 	name = Wang Lu
+[core]
+	autocrlf = input
+	safecrlf = true
