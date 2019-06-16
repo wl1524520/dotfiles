@@ -12,7 +12,7 @@ ln -sf $BASE_DIR/bin $HOME/.bin
 # zsh
 ln -sf $BASE_DIR/zshrc $HOME/.zshrc
 
-# Python 
+# Python
 if [ ! -d $HOME/.pip ]; then
     mkdir -p $HOME/.pip
 fi
@@ -34,7 +34,7 @@ ln -sf $BASE_DIR/conf.d/youtube-dl.config $HOME/.config/youtube-dl/config
 
 # Fcitx Input method on Linux
 if [ `uname` = 'Linux' ]; then
-    ln -sf $BASE_DIR/xprofile $HOME/.xprofile 
+    ln -sf $BASE_DIR/xprofile $HOME/.xprofile
 fi
 
 #########################################

@@ -2,10 +2,11 @@ all: help
 
 help:
 	@echo ""
-	@echo "-- Help Menu for Ubuntu"
+	@echo "-- Help Menu"
 	@echo ""
 	@echo "   1. make update        - Update submodule repository"
 	@echo "   2. make link          - Install dotfiles link"
+	@echo "   3. make vim           - Install dotfiles link For vim/neovim"
 	@echo ""
 
 update:
@@ -15,8 +16,12 @@ update:
 	@echo ""
 
 link:
-	@echo "Start set for normal user"
-	@./install
+	@echo "Start install dotfiles link"
+	@./install.sh
+
+vim:
+	@echo "Start install dotfiles for vim/neovim"
+	@./install-vim.sh
 
 wps:
 	@sudo cp -r font.d/wps-symbol-fonts /usr/share/fonts
