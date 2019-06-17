@@ -45,6 +45,13 @@ git submodule add https://github.com/robbyrussell/oh-my-zsh.git
 git submodule update --init --remote
 ```
 
+## 关于 Windows Subsystem Linux 安全警告
+手动编辑 /etc/profile
+在最后面添加如下变量以关闭 COMPFIX
+```
+export WSL=1
+```
+
 ## 四、设置默认 python 版本
 直接执行这两个命令即可：
 ```bash
