@@ -13,4 +13,4 @@ sudo pacman -S fcitx fcitx-configtool fcitx-gtk3 fcitx-qt4 fcitx-qt5 fcitx-googl
 sudo pacman -S screenfetch go clang llvm llvm-libs cmake npm nodejs fakeroot
 
 # Remove unused packages
-sudo pacman -Rs xfburn hexchat pidgin thunderbird
+sudo pacman -Rs xfburn hexchat pidgin thunderbird libreoffice-still steam-manjaro ms-office-online
