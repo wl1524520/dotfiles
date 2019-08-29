@@ -10,9 +10,7 @@ git clone https://github.com/wl1524520/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
 
 # 3. 开始安装
-make update
-make link
-make vim
+make awesome
 ```
 
 ## 二、VIM 配置文件
