@@ -8,5 +8,6 @@ BRANCH=${BRANCH:-master}
 
 # clone oh-my-zsh to ~/.oh-my-zsh
 #echo "git clone --depth=1 --branch" "$BRANCH" "$REMOTE" "$ZSH"
+rm -rf ~/.oh-my-zsh
 git clone --depth=1 --branch "$BRANCH" "$REMOTE" ~/.oh-my-zsh
 
