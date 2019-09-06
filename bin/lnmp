@@ -1,6 +1,15 @@
 #!/bin/bash
 # CentOS 7 systemctl
 
+if [ `uname` = 'Linux' ]; then
+    export DIST=`lsb_release -i | awk -F : '{print $2}' | sed -e 's/^[\t]*//g' | sed -e 's/[ ]*$//g'`
+    echo $DIST
+    if [ $DIST != 'CentOS' ]; then
+        echo 'Your OS is not CentOS'
+        exit -1
+    fi
+fi
+
 function show_usage()
 {
     echo -ne "\033[31m"
