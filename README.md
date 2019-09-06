@@ -1,6 +1,7 @@
 # Dotfiles 仓库
 支持的系统：Debian/Ubuntu/Mint/LMDE/CentOS/macOS/Arch/Manjaro
-配合 zsh 使用效果最佳
+
+需要配合 zsh 使用才能达到最佳效果
 
 ## 一、安装
 安装前请先安装 make 和 git ，安装过程依赖这两个命令！
