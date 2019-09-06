@@ -2,6 +2,7 @@
 支持的系统：Debian/Ubuntu/Mint/LMDE/CentOS/macOS/Arch/Manjaro
 
 ## 一、安装
+安装前请先安装 make 和 git ，安装过程依赖这两个命令！
 ```bash
 # 1. 克隆仓库到本地
 git clone https://github.com/wl1524520/dotfiles.git ~/.dotfiles
@@ -34,30 +35,10 @@ itchyny/lightline.vim | 底部状态栏
 morhetz/gruvbox | 主题
 posva/vim-vue | vue 语法高亮
 
-## 三、子模块添加与更新
-```bash
-# 添加
-git submodule add https://github.com/robbyrussell/oh-my-zsh.git
-
-# 更新
-git submodule update --init --remote
-```
-
-## 关于 Windows Subsystem Linux 安全警告
+## 三、关于 Windows Subsystem Linux 安全警告
 手动编辑 /etc/profile
 在最后面添加如下变量以关闭 COMPFIX
 ```
 export WSL=1
-```
-
-## 四、设置默认 python 版本
-直接执行这两个命令即可：
-```bash
-sudo update-alternatives --install /usr/bin/python python /usr/bin/python2 100
-sudo update-alternatives --install /usr/bin/python python /usr/bin/python3 150
-```
-如果要切换到Python2，执行：
-```bash
-sudo update-alternatives --config python
 ```
 

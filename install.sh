@@ -20,9 +20,6 @@ fi
 ln -sf $BASE_DIR/conf.d/python/pip.conf $HOME/.pip/pip.conf
 ln -sf $BASE_DIR/conf.d/python/pydistutils.cfg $HOME/.pydistutils.cfg
 
-# git config
-ln -sf $BASE_DIR/conf.d/gitconfig $HOME/.gitconfig
-
 # youtube downloader
 if [ ! -d $HOME/.config/youtube-dl ]; then
     mkdir -p $HOME/.config/youtube-dl
