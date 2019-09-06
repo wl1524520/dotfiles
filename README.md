@@ -1,5 +1,6 @@
 # Dotfiles 仓库
 支持的系统：Debian/Ubuntu/Mint/LMDE/CentOS/macOS/Arch/Manjaro
+配合 zsh 使用效果最佳
 
 ## 一、安装
 安装前请先安装 make 和 git ，安装过程依赖这两个命令！
@@ -46,3 +47,4 @@ export WSL=1
 命令 | 参数 | 功能
 ---|---|---
 lnmp | start/stop/restart | CentOS 7 启动/停止/重启 lnmp 服务
+
