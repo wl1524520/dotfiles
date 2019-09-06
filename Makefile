@@ -23,7 +23,7 @@ awesome:
 
 ohmyzsh:
 	@echo "Start install oh-my-zsh"
-	@./oh-my-zsh.sh
+	@./install-ohmyzsh.sh
 	@echo "Finish install oh-my-zsh"
 	@echo ""
 
