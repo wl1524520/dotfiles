@@ -42,3 +42,7 @@ posva/vim-vue | vue 语法高亮
 export WSL=1
 ```
 
+## 四、快捷脚本
+命令 | 参数 | 功能
+---|---|---
+lnmp | start/stop/restart | CentOS 7 启动/停止/重启 lnmp 服务
