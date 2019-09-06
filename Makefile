@@ -16,7 +16,7 @@ awesome:
 	@echo "Finish install oh-my-zsh"
 	@echo ""
 	@echo "Start install dotfiles link"
-	@./install.sh
+	@./install-link.sh
 	@echo ""
 	@echo "Start install dotfiles for vim/neovim"
 	@./install-vim.sh
