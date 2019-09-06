@@ -1,0 +1,38 @@
+#!/bin/bash
+# CentOS 7 systemctl
+
+function show_usage()
+{
+    echo -ne "\033[31m"
+    echo "Usage: lnmp start|stop|restart"
+    echo -ne "\033[0m"
+}
+
+function echo_success()
+{
+    echo -e "\033[43;31m$*\033[0m"
+}
+
+
+if [ $# != 1 ];then
+    show_usage $0
+    exit 1
+fi
+
+case $1 in
+    start)
+        nginx -t && systemctl start nginx && systemctl start php-fpm && echo_success 'LNMP Server Start Success' 
+        ;;
+
+    stop)
+        systemctl stop nginx && systemctl stop php-fpm && echo_success 'LNMP Server Stop Success' 
+        ;;
+
+    restart)
+        nginx -t && systemctl restart nginx && systemctl restart php-fpm && echo_success 'LNMP Server Restart Success' 
+        ;;
+
+    *)
+        show_usage $0
+        ;;
+esac
