@@ -10,9 +10,6 @@ export CPPFLAGS="-I/usr/local/opt/openssl/include"
 
 export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-
 if [ $commands[qshell] ]; then
   source <(qshell completion zsh)
 fi

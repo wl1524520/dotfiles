@@ -3,6 +3,13 @@
 
 需要配合 zsh 使用才能达到最佳效果
 
+### 功能介绍
+* 集成 oh-my-zsh 插件进行终端优化，并自动适应不同系统
+* 安装 vim 增强插件，具体内容见下文章
+* 使用中科大镜像源加速 python
+* 使用清华大学镜像源加速 nodejs
+* 待续...
+
 ## 一、安装
 安装前请先安装 make 和 git ，安装过程依赖这两个命令！
 ```bash
@@ -49,3 +56,10 @@ export WSL=1
 ---|---|---
 lnmp | start/stop/restart | CentOS 7 启动/停止/重启 lnmp 服务
 
+## 五、自定义配置（优先级最高）
+本配置插件会自动检测是否存在 ~/.profile_user 文件，如果存在，则会自动加载！
+
+例如：在 ~/.profile_user 文件中增加如下变量，则可以开启远程 Linux 系统的 vim 主题颜色配置
+```bash
+export COLORTERM='truecolor'
+```

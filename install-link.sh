@@ -42,6 +42,6 @@ if [ `uname` = 'Darwin' ]; then
     if [ ! -d $HOME/.config/mpv ]; then
         mkdir -p $HOME/.config/mpv
     fi
-    ln -sf $BASE_DIR/mpv/mac.mpv.conf $HOME/.config/mpv/mpv.conf
+    ln -sf $BASE_DIR/conf.d/mpv/mac.mpv.conf $HOME/.config/mpv/mpv.conf
 fi
 
