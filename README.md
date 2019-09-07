@@ -28,8 +28,8 @@ make awesome
 # 进入 dotfiles 配置目录
 cd ~/.dotfiles
 
-# 拉取最新配置文件到本地
-git pull origin master
+# 更新最新配置文件到本地
+make update
 ```
 
 ## 二、VIM 配置文件

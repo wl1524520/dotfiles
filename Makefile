@@ -8,6 +8,7 @@ help:
 	@echo "   2. make ohmyzsh       - Install oh-my-zsh repository"
 	@echo "   3. make link          - Install dotfiles link"
 	@echo "   4. make vim           - Install dotfiles link For vim/neovim"
+	@echo "   5. make update        - Update dotfiles"
 	@echo ""
 
 awesome:
@@ -20,6 +21,12 @@ awesome:
 	@echo ""
 	@echo "Start install dotfiles for vim/neovim"
 	@./install-vim.sh
+
+update:
+	@echo "Start update dotfiles"
+	@git pull origin master
+	@echo "Finish update dotfiles"
+	@echo ""
 
 ohmyzsh:
 	@echo "Start install oh-my-zsh"
