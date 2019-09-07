@@ -1,9 +1,9 @@
-# Dotfiles 仓库
+# Unix/Linux 终端优化插件
 支持的系统：Debian/Ubuntu/Mint/LMDE/CentOS/macOS/Arch/Manjaro
 
 需要配合 zsh 使用才能达到最佳效果
 
-### 功能介绍
+### 优化介绍
 * 集成 oh-my-zsh 插件进行终端优化，并自动适应不同系统
 * 安装 vim 增强插件，具体内容见下文章
 * 使用中科大镜像源加速 python
