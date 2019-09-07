@@ -10,8 +10,9 @@
 * 使用清华大学镜像源加速 nodejs
 * 待续...
 
-## 一、安装
+## 一、安装与更新
 安装前请先安装 make 和 git ，安装过程依赖这两个命令！
+### 1.1 安装
 ```bash
 # 1. 克隆仓库到本地
 git clone https://github.com/wl1524520/dotfiles.git ~/.dotfiles
@@ -21,6 +22,14 @@ cd ~/.dotfiles
 
 # 3. 开始安装
 make awesome
+```
+### 1.2 更新
+```bash
+# 进入 dotfiles 配置目录
+cd ~/.dotfiles
+
+# 拉取最新配置文件到本地
+git pull origin master
 ```
 
 ## 二、VIM 配置文件
