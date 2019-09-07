@@ -36,7 +36,7 @@ vim:
 	@./install-vim.sh
 
 wps:
-	@sudo cp -r font.d/wps-symbol-fonts /usr/share/fonts
+	@sudo cp -r conf.d/font.d/wps-symbol-fonts /usr/share/fonts
 	@fc-cache --force --verbose
 
 wsl:
