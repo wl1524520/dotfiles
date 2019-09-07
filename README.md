@@ -22,7 +22,14 @@ cd ~/.dotfiles
 
 # 3. 开始安装
 make awesome
+
 ```
+
+如果使用的是 Windows Subsystem Linux , 可执行如下命令保证从 bash 命令进入系统时能顺利切换到 zsh
+```bash
+make wsl
+```
+
 ### 1.2 更新
 ```bash
 # 进入 dotfiles 配置目录
