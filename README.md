@@ -25,7 +25,8 @@ make awesome
 
 ```
 
-如果使用的是 Windows Subsystem Linux , 可执行如下命令保证从 bash 命令进入系统时能顺利切换到 zsh
+如果使用的是 Windows Subsystem Linux , 并没有配置 zsh ，只进行简单的环境变量优化。
+执行如下命令设置 WSL 下的优化变量
 ```bash
 make wsl
 ```
@@ -60,19 +61,12 @@ itchyny/lightline.vim | 底部状态栏
 morhetz/gruvbox | 主题
 posva/vim-vue | vue 语法高亮
 
-## 三、关于 Windows Subsystem Linux 安全警告
-手动编辑 /etc/profile
-在最后面添加如下变量以关闭 COMPFIX
-```
-export WSL=1
-```
-
-## 四、快捷脚本
+## 三、快捷脚本
 命令 | 参数 | 功能
 ---|---|---
 lnmp | start/stop/restart | CentOS 7 启动/停止/重启 lnmp 服务
 
-## 五、自定义配置（优先级最高）
+## 四、自定义配置（优先级最高）
 本配置插件会自动检测是否存在 ~/.profile_user 文件，如果存在，则会自动加载！
 
 例如：在 ~/.profile_user 文件中增加如下变量，则可以开启远程 Linux 系统的 vim 主题颜色配置

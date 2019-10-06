@@ -2,8 +2,38 @@
 
 # User specific aliases and functions
 
-# Launch Zsh
-if [ -t 1  ]; then
-    exec zsh
-fi
+setopt no_nomatch
 
+export GOPATH=~/go
+export VISUAL="vim"
+export TERM=xterm-color
+export NODE_MIRROR=https://mirrors.tuna.tsinghua.edu.cn/nodejs-release/
+export PATH=$PATH:$HOME/.bin
+
+alias w='w -i'
+
+# promot
+# export PS1='\[\e[38;5;135m\]\u\[\e[0m\]@\[\e[38;5;166m\]\h\[\e[0m\] \[\e[38;5;118m\]\w\[\e[0m\] \$ '
+export PS1='\[\e[01;32m\]\u@\h\[\e[00m\] \[\e[01;34m\]\w\[\e[00m\] \$ '
+
+alias cdc='cd /mnt/c'
+alias cdd='cd /mnt/d'
+alias cde='cd /mnt/e'
+
+alias ls='ls --color=tty'
+alias ll='ls -lh'
+alias la='ls -lAh'
+
+# Launch Zsh
+#if [ -t 1  ]; then
+#    exec zsh
+#fi
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# For user
+if [ -f ~/.profile_user  ]; then
+    source ~/.profile_user
+fi
