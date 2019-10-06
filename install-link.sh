@@ -10,9 +10,6 @@ BASE_DIR=$HOME/.dotfiles
 rm -f $HOME/.bin
 ln -sf $BASE_DIR/bin $HOME/.bin
 
-# zsh
-ln -sf $BASE_DIR/zshrc $HOME/.zshrc
-
 # Python
 if [ ! -d $HOME/.pip ]; then
     mkdir -p $HOME/.pip

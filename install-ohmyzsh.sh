@@ -11,3 +11,5 @@ BRANCH=${BRANCH:-master}
 rm -rf ~/.oh-my-zsh
 git clone --depth=1 --branch "$BRANCH" "$REMOTE" ~/.oh-my-zsh
 
+# link .zshrc
+ln -sf $HOME/.dotfiles/zshrc $HOME/.zshrc
