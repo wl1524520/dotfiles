@@ -1,6 +1,9 @@
 #!/bin/bash
 # CentOS 7 systemctl
 
+NG_CMD='nginx'
+PHP_FPM_CMD='php-fpm'
+
 function show_usage()
 {
     echo -ne "\033[31m"
@@ -16,8 +19,12 @@ function echo_success()
 if [ `uname` = 'Linux' ]; then
     export DIST=`lsb_release -i | awk -F : '{print $2}' | sed -e 's/^[\t]*//g' | sed -e 's/[ ]*$//g'`
     echo $DIST
-    if [ $DIST != 'CentOS' ]; then
-        echo_success 'EXIT : Your OS is not CentOS'
+    if [ $DIST == 'CentOS' ]; then
+        PHP_FPM_CMD='php-fpm'
+    elif [ $DIST == 'Ubuntu' ]; then
+        PHP_FPM_CMD='php7.2-fpm'
+    else
+        echo_success 'EXIT : Your OS is not CentOS/Ubuntu'
         exit -1
     fi
 else
@@ -32,15 +39,15 @@ fi
 
 case $1 in
     start)
-        nginx -t && systemctl start nginx && systemctl start php-fpm && echo_success 'LNMP Server Start Success' 
+        nginx -t && systemctl start ${NG_CMD} && systemctl start ${PHP_FPM_CMD} && echo_success 'LNMP Server Start Success' 
         ;;
 
     stop)
-        systemctl stop nginx && systemctl stop php-fpm && echo_success 'LNMP Server Stop Success' 
+        systemctl stop ${NG_CMD} && systemctl stop ${PHP_FPM_CMD} && echo_success 'LNMP Server Stop Success' 
         ;;
 
     restart)
-        nginx -t && systemctl restart nginx && systemctl restart php-fpm && echo_success 'LNMP Server Restart Success' 
+        nginx -t && systemctl restart ${NG_CMD} && systemctl restart ${PHP_FPM_CMD} && echo_success 'LNMP Server Restart Success' 
         ;;
 
     *)
