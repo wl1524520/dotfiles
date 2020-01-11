@@ -2,8 +2,6 @@
 
 # User specific aliases and functions
 
-setopt no_nomatch
-
 export GOPATH=~/go
 export VISUAL="vim"
 export TERM=xterm-color
