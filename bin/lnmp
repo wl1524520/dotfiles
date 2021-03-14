@@ -22,7 +22,7 @@ if [ `uname` = 'Linux' ]; then
     if [ $DIST == 'CentOS' ]; then
         PHP_FPM_CMD='php-fpm'
     elif [ $DIST == 'Ubuntu' ]; then
-        PHP_FPM_CMD='php7.2-fpm'
+        PHP_FPM_CMD='php7.4-fpm'
     else
         echo_success 'EXIT : Your OS is not CentOS/Ubuntu'
         exit -1
