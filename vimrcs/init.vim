@@ -37,9 +37,9 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'ervandew/supertab'
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
+" Plugin 'ervandew/supertab'
+" Plugin 'SirVer/ultisnips'
+" Plugin 'honza/vim-snippets'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'posva/vim-vue'
 Plugin 'chr4/nginx.vim'
@@ -444,9 +444,9 @@ endfunction
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plugin: snippets ultisnips supertab settings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:SuperTabDefaultCompletionType = '<C-n>'
-let g:SuperTabCrMapping             = 0
-let g:UltiSnipsExpandTrigger        = '<tab>'
-let g:UltiSnipsJumpForwardTrigger   = '<tab>'
-let g:UltiSnipsJumpBackwardTrigger  = '<s-tab>'
+" let g:SuperTabDefaultCompletionType = '<C-n>'
+" let g:SuperTabCrMapping             = 0
+" let g:UltiSnipsExpandTrigger        = '<tab>'
+" let g:UltiSnipsJumpForwardTrigger   = '<tab>'
+" let g:UltiSnipsJumpBackwardTrigger  = '<s-tab>'
 
