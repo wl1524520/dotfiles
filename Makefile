@@ -42,9 +42,3 @@ vim:
 	@echo "Start install dotfiles for vim/neovim"
 	@./install-vim.sh
 
-wps:
-	@sudo cp -r conf.d/font.d/wps-symbol-fonts /usr/share/fonts
-	@fc-cache --force --verbose
-
-wsl:
-	@cat bashrc.d/wsl/bashrc > ~/.bashrc

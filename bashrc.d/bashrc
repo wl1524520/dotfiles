@@ -2,11 +2,8 @@
 
 setopt no_nomatch
 
-export GOPATH=~/go
 export VISUAL="vim"
 export TERM=xterm-color
-export NODE_MIRROR=https://mirrors.tuna.tsinghua.edu.cn/nodejs-release/
-export PATH=$PATH:$HOME/.bin
 
 alias w='w -i'
 

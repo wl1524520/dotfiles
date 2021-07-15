@@ -7,7 +7,6 @@
 * 集成 oh-my-zsh 插件进行终端优化，并自动适应不同系统
 * 安装 vim 增强插件，具体内容见下文章
 * 使用中科大镜像源加速 python
-* 使用清华大学镜像源加速 nodejs
 * 待续...
 
 ## 一、安装与更新
@@ -23,12 +22,6 @@ cd ~/.dotfiles
 # 3. 开始安装
 make awesome
 
-```
-
-如果使用的是 Windows Subsystem Linux , 并没有配置 zsh ，只进行简单的环境变量优化。
-执行如下命令设置 WSL 下的优化变量
-```bash
-make wsl
 ```
 
 ### 1.2 更新
