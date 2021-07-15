@@ -56,7 +56,7 @@ plugins=(encode64 git git-extras sudo systemd themes)
 
 #  export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/bin:/usr/x86_64-pc-linux-gnu/gcc-bin/4.9.3"
 # export MANPATH="/usr/local/man:$MANPATH"
-export PATH=$PATH:$HOME/bin:$HOME/.composer/vendor/bin:$HOME/.bin:/usr/local/go/bin
+export PATH=$PATH:$HOME/bin
 
 source $ZSH/oh-my-zsh.sh
 
