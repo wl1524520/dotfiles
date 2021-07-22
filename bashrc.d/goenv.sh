@@ -14,5 +14,5 @@ go env -w  GOPROXY=https://goproxy.cn,direct
 # 3. 官方
 # go env -w  GOPROXY=https://goproxy.io,direct
 
-export PATH=$PATH:$GOPATH/bin:$HOME/protoc/bin
+export PATH=$PATH:`go env GOPATH`/bin:$GOPATH/bin:$HOME/protoc/bin
 

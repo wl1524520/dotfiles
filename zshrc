@@ -6,7 +6,11 @@ export ZSH_CUSTOM=$HOME/.dotfiles/zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="gentoo"
+if [ `uname` = 'Darwin' ]; then
+    ZSH_THEME="robbyrussell"
+else
+    ZSH_THEME="gentoo"
+fi
 
 # Uncomment the following line to use case-sensitive completion.
 CASE_SENSITIVE="true"
@@ -50,7 +54,7 @@ HIST_STAMPS="yyyy-mm-dd"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(encode64 git git-extras sudo systemd themes)
+plugins=(encode64 git git-extras sudo systemd themes docker)
 
 # User configuration
 
@@ -87,4 +91,5 @@ export LC_ALL=en_US.UTF-8
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 source ~/.dotfiles/bashrc.d/bashrc
+
 
