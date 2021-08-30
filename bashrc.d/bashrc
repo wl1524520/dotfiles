@@ -6,7 +6,6 @@ export VISUAL="vim"
 export TERM=xterm-color
 
 alias w='w -i'
-# alias vi='vim'
 alias dc=docker-compose
 alias sail='bash vendor/bin/sail'
 
@@ -26,7 +25,7 @@ if type go > /dev/null 2>&1; then
 fi
 
 # For macOS
-if [ `uname` = 'Darwin' ]; then
+if [ $OSTYPE = "darwin"* ]; then
     source ~/.dotfiles/bashrc.d/macos.sh
 fi
 
