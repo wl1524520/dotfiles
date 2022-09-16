@@ -20,7 +20,7 @@ else
 fi
 
 # set PATH
-export PATH=$PATH:$HOME/.bin:$HOME/bin:$HOME/.composer/vendor/bin
+export PATH=$PATH:$HOME/.bin:$HOME/bin:$HOME/.dotfiles/bin:$HOME/.composer/vendor/bin
 
 # For macOS
 #if [ $OSTYPE = "darwin"* ]; then
