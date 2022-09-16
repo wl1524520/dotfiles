@@ -1,4 +1,5 @@
 # .profile_user
+export TERM=xterm-color
 
 # For nvm setting
 export NVM_DIR="$HOME/.nvm"

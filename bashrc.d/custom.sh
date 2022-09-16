@@ -2,8 +2,7 @@
 
 # setopt no_nomatch
 
-# export VISUAL="vim"
-# export TERM=xterm-color
+export VISUAL="vim"
 
 # aliases
 alias ll='ls -lF'
