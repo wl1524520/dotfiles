@@ -7,12 +7,6 @@ fi
 
 BASE_DIR=$HOME/.dotfiles
 
-rm -f $HOME/.bin
-ln -sf $BASE_DIR/bin $HOME/.bin
-
-# bash aliases
-ln -sf $BASE_DIR/bashrc.d/bash_aliases $HOME/.bash_aliases
-
 # Python
 if [ ! -d $HOME/.pip ]; then
     mkdir -p $HOME/.pip
