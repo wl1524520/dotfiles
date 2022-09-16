@@ -10,6 +10,9 @@ BASE_DIR=$HOME/.dotfiles
 rm -f $HOME/.bin
 ln -sf $BASE_DIR/bin $HOME/.bin
 
+# bash aliases
+ln -sf $BASE_DIR/bashrc.d/bash_aliases $HOME/.bash_aliases
+
 # Python
 if [ ! -d $HOME/.pip ]; then
     mkdir -p $HOME/.pip
@@ -20,11 +23,6 @@ ln -sf $BASE_DIR/conf.d/python/pydistutils.cfg $HOME/.pydistutils.cfg
 #########################################
 # Linux Only Section
 #########################################
-
-# Fcitx Input method on Linux
-if [ `uname` = 'Linux' ]; then
-    ln -sf $BASE_DIR/xprofile $HOME/.xprofile
-fi
 
 #########################################
 # Darwin(macOS) Only Section
