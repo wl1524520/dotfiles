@@ -9,7 +9,6 @@ if [ ! -f ~/.bashrc.origin  ]; then
 fi
 
 # clone oh-my-bash to ~/.oh-my-bash
-#echo "git clone --depth=1 --branch" "$BRANCH" "$REMOTE" "$ZSH"
 rm -rf $OSH
 git clone --depth=1 https://github.com/ohmybash/oh-my-bash.git "$OSH"
 

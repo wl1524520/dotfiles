@@ -21,4 +21,7 @@ ln -sf $BASE_DIR/conf.d/python/pydistutils.cfg $HOME/.pydistutils.cfg
 #########################################
 # Darwin(macOS) Only Section
 #########################################
-
+# For macOS
+#if [ $OSTYPE = "darwin"* ]; then
+#    source ~/.dotfiles/bashrc.d/macos.sh
+#fi
