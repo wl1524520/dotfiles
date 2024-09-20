@@ -7,7 +7,7 @@ export VISUAL="vim"
 # aliases
 alias ll='ls -lF'
 alias w='w -i'
-alias dc=docker-compose
+alias dc=docker compose
 alias sail='bash vendor/bin/sail'
 
 # vim or neovim , this is a question
