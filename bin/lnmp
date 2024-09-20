@@ -1,5 +1,4 @@
 #!/bin/bash
-# CentOS 7 systemctl
 
 NG_CMD='nginx'
 PHP_FPM_CMD='php-fpm'
@@ -21,8 +20,10 @@ if [ `uname` = 'Linux' ]; then
     echo $DIST
     if [ $DIST == 'Ubuntu' ]; then
         PHP_FPM_CMD='php8.3-fpm'
+    elif [ $DIST == 'Debian' ]; then
+        PHP_FPM_CMD='php8.3-fpm'
     else
-        echo_success 'EXIT : Your OS is not Ubuntu'
+        echo_success 'EXIT : Your OS is not Debian / Ubuntu'
         exit -1
     fi
 else
