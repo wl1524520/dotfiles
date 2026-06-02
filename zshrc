@@ -56,7 +56,7 @@ plugins=(encode64 git git-extras sudo systemd themes docker)
 
 #  export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/bin:/usr/x86_64-pc-linux-gnu/gcc-bin/4.9.3"
 # export MANPATH="/usr/local/man:$MANPATH"
-export PATH=$PATH:$HOME/bin
+export PATH=$PATH:$HOME/bin:$HOME/.local/bin
 
 source $ZSH/oh-my-zsh.sh
 
@@ -87,3 +87,7 @@ export LC_ALL=en_US.UTF-8
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 source ~/.dotfiles/bashrc.d/custom.sh
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
