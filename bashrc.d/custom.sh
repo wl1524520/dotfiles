@@ -19,7 +19,7 @@ else
 fi
 
 # set PATH
-export PATH=$PATH:$HOME/.bin:$HOME/bin:$HOME/.dotfiles/bin:$HOME/.composer/vendor/bin
+export PATH=$PATH:$HOME/.bin:$HOME/bin:$HOME/.dotfiles/bin:$HOME/.composer/vendor/bin:$HOME/.local/bin
 
 # For user
 if [ -f ~/.profile_user  ]; then
