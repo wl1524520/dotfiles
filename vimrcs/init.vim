@@ -25,71 +25,53 @@
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" no vi compatible
-set nocompatible              " be iMproved, required
-filetype off                  " required
+" vim-plug 插件管理器 — 同时兼容 vim 和 neovim
+call plug#begin('~/.vim/plugged')
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
+" 插件列表
+Plug 'junegunn/vim-plug'
+Plug 'jiangmiao/auto-pairs'
+Plug 'chr4/nginx.vim'
+"Plug 'scrooloose/nerdcommenter'
+"Plug 'alvan/vim-closetag'
+"Plug 'junegunn/vim-easy-align'
+"Plug 'scrooloose/nerdtree'
+"Plug 'yegappan/mru'
+"Plug 'jlanzarotta/bufexplorer'
+"Plug 'fatih/vim-go'
+"Plug 'vim-syntastic/syntastic'
+"Plug 'w0rp/ale'
+"Plug 'Valloric/YouCompleteMe'
+"Plug 'rust-lang/rust.vim'
+"Plug 'leafgarland/typescript-vim'
+"Plug 'tpope/vim-salve'
+"Plug 'tpope/vim-dispatch'
+"Plug 'tpope/vim-fireplace'
+"Plug 'tpope/vim-surround'
+"Plug 'tpope/vim-repeat'
+"Plug 'tpope/vim-sexp-mappings-for-regular-people'
+"Plug 'vim-scripts/VOoM'
+"Plug 'guns/vim-sexp'
 
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'ervandew/supertab'
-" Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
-Plugin 'jiangmiao/auto-pairs'
-Plugin 'posva/vim-vue'
-Plugin 'chr4/nginx.vim'
-"Plugin 'scrooloose/nerdcommenter'
-"Plugin 'alvan/vim-closetag'
-"Plugin 'junegunn/vim-easy-align'
-"Plugin 'scrooloose/nerdtree'
-"Plugin 'yegappan/mru'
-"Plugin 'jlanzarotta/bufexplorer'
-"Plugin 'fatih/vim-go'
-"Plugin 'vim-syntastic/syntastic'
-"Plugin 'w0rp/ale'
-"Plugin 'Valloric/YouCompleteMe'
-"Plugin 'rust-lang/rust.vim'
-"Plugin 'leafgarland/typescript-vim'
-"Plugin 'tpope/vim-salve'
-"Plugin 'tpope/vim-dispatch'
-"Plugin 'tpope/vim-fireplace'
-"Plugin 'tpope/vim-surround'
-"Plugin 'tpope/vim-repeat'
-"Plugin 'tpope/vim-sexp-mappings-for-regular-people'
-"Plugin 'vim-scripts/VOoM'
-"Plugin 'guns/vim-sexp'
-
-" Looks and feel
-Plugin 'itchyny/lightline.vim' " status line
-Plugin 'morhetz/gruvbox'
-"Plugin 'dracula/vim'
-"Plugin 'sjl/badwolf'
+" 外观
+Plug 'itchyny/lightline.vim' " 底部状态栏
+Plug 'morhetz/gruvbox'        " 主题
+"Plug 'dracula/vim'
+"Plug 'sjl/badwolf'
 
 " Assembly
-" Plugin 'shirk/vim-gas'
-" vim-easymotion
-" Plugin 'easymotion/vim-easymotion'
-" Plugin 'jceb/vim-orgmode'
+" Plug 'shirk/vim-gas'
+" Plug 'easymotion/vim-easymotion'
+" Plug 'jceb/vim-orgmode'
 
-call vundle#end()            " required
+call plug#end()
 
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
+filetype plugin indent on
+
+" 简要帮助
+" :PlugInstall    - 安装插件
+" :PlugUpdate     - 更新插件
+" :PlugClean      - 清理未使用的插件
 
 
 
@@ -98,10 +80,6 @@ filetype plugin indent on    " required
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Sets how many lines of history VIM has to remember
 set history=500
-
-" Enable filetype plugins
-filetype plugin on
-filetype indent on
 
 " Set to auto read when a file is changed from the outside
 set autoread
@@ -123,12 +101,6 @@ command W w !sudo tee % > /dev/null
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Set 7 lines to the cursor - when moving vertically using j/k
 set so=7
-
-" Avoid garbled characters in Chinese language windows OS
-let $LANG='en' 
-set langmenu=en
-source $VIMRUNTIME/delmenu.vim
-source $VIMRUNTIME/menu.vim
 
 " Turn on the Wild menu
 set wildmenu
@@ -198,23 +170,26 @@ endif
 " => Colors and Fonts
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Enable syntax highlighting
-syntax enable 
+syntax enable
+
+" 配色方案：根据终端能力分级配置
+set background=dark
+
+if $COLORTERM == 'truecolor' || $COLORTERM == 'gnome-terminal'
+    " GUI 终端：启用真彩色
+    set t_Co=256
+    set termguicolors
+elseif $TERM =~ '256color'
+    " 256 色终端（如 Windows Terminal SSH）
+    set t_Co=256
+endif
+" 8 色终端（如 Xshell 默认 xterm）：不修改 t_Co，由 vim 自动检测
 
 try
-    colorscheme delek
+    colorscheme gruvbox
 catch
+    colorscheme delek
 endtry
-
-" Enable 256 colors palette in Gnome Terminal
-if $COLORTERM == 'gnome-terminal' || $COLORTERM == 'truecolor'
-    set t_Co=256
-    try
-        colorscheme gruvbox
-    catch
-    endtry
-endif
-
-set background=dark
 
 " Set extra options when running in GUI mode
 if has("gui_running")
@@ -224,8 +199,8 @@ if has("gui_running")
     set guitablabel=%M\ %t
 endif
 
-" Set utf8 as standard encoding and en_US as the standard language
-set encoding=utf8
+" Set utf-8 as standard encoding (neovim 已内置 utf-8，vim 仍需显式设置)
+set encoding=utf-8
 
 " Use Unix as the standard file type
 set ffs=unix,dos,mac
@@ -262,9 +237,9 @@ set si "Smart indent
 set wrap "Wrap lines
 
 
-""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""
 " => Visual mode related
-""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""
 " Visual mode pressing * or # searches for the current selection
 " Super useful! From an idea by Michael Naumann
 vnoremap <silent> * :<C-u>call VisualSelection('', '')<CR>/<C-R>=@/<CR><CR>
@@ -327,9 +302,9 @@ endtry
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
 
-""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""
 " => Status line
-""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""
 " Always show the status line
 set laststatus=2
 
@@ -439,14 +414,3 @@ function! VisualSelection(direction, extra_filter) range
     let @/ = l:pattern
     let @" = l:saved_reg
 endfunction
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Plugin: snippets ultisnips supertab settings
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" let g:SuperTabDefaultCompletionType = '<C-n>'
-" let g:SuperTabCrMapping             = 0
-" let g:UltiSnipsExpandTrigger        = '<tab>'
-" let g:UltiSnipsJumpForwardTrigger   = '<tab>'
-" let g:UltiSnipsJumpBackwardTrigger  = '<s-tab>'
-

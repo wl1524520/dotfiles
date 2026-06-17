@@ -7,7 +7,7 @@ help:
 	@echo "   1. make ohmybash      - Install oh-my-bash repository"
 	@echo "   2. make ohmyzsh       - Install oh-my-zsh repository"
 	@echo "   3. make vim           - Install dotfiles link For vim/neovim"
-	@echo "   4. make python        - Set Python Source"
+	@echo "   4. make vim-plugins   - Download vim plugins to vendor/vim/"
 	@echo ""
 
 ohmybash:
@@ -26,7 +26,7 @@ vim:
 	@echo "Start install dotfiles for vim/neovim"
 	@./install-vim.sh
 
-python:
-	@echo "Start Set Python Source"
-	@./set-python.sh
+vim-plugins:
+	@echo "Start download vim plugins"
+	@bash vendor/download-vim-plugins.sh
 
