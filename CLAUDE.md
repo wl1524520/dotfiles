@@ -28,9 +28,9 @@ make ohmyzsh    # 安装 oh-my-zsh（克隆上游仓库 + 符号链接 zshrc）
 
 两个 shell 入口文件结构对称：
 - 设置 `ZSH_CUSTOM` / `OSH_CUSTOM` 指向本仓库的 `zsh_custom/` / `osh_custom/`，使得自定义主题和插件随仓库版本管理
-- 末尾统一 `source ~/.dotfiles/bashrc.d/custom.sh` 加载共享配置
+- 末尾统一 `source ~/.dotfiles/profile.d/custom.sh` 加载共享配置
 
-### bashrc.d/ — 共享配置片段
+### profile.d/ — 共享配置片段
 
 无论使用 zsh 还是 bash，都会加载此目录下的配置：
 

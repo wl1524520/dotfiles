@@ -121,4 +121,4 @@ source "$OSH"/oh-my-bash.sh
 # alias bashconfig="mate ~/.bashrc"
 # alias ohmybash="mate ~/.oh-my-bash"
 
-source ~/.dotfiles/bashrc.d/custom.sh
+source ~/.dotfiles/profile.d/custom.sh
