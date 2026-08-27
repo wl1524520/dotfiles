@@ -1,5 +1,5 @@
 # Unix/Linux 终端优化插件
-支持的系统：Debian/Ubuntu/Mint/LMDE/CentOS/macOS/Arch/Manjaro
+支持的系统：Debian/Ubuntu/Mint/LMDE/CentOS/macOS/Arch/Manjaro/WSL2
 
 ### 优化介绍
 * 集成 oh-my-zsh 插件进行终端优化
