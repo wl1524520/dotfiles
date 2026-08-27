@@ -32,12 +32,12 @@ make ohmyzsh    # 安装 oh-my-zsh（克隆上游仓库 + 符号链接 zshrc）
 
 ### profile.d/ — 共享配置片段
 
-无论使用 zsh 还是 bash，都会加载此目录下的配置：
+无论使用 zsh 还是 bash，都会加载 custom.sh（其内部再加载 `~/.profile_user`）：
 
 | 文件 | 作用 |
 |------|------|
-| `custom.sh` | 通用别名 (`ll`, `dc`, `sail`)、PATH 设置、vim/nvim 别名、加载 `~/.profile_user` |
-| `profile_user.sh` | 用户自定义扩展示例（如 `COLORTERM=truecolor` 开启远程 vim 真彩色） |
+| `custom.sh` | 通用别名 (`ll`, `dc`, `sail`, `vi='vim'`)、PATH 设置、加载 `~/.profile_user` |
+| `profile_user.sh` | 用户自定义扩展模板，需复制为 `~/.profile_user` 后生效（如 `COLORTERM=truecolor` 开启远程 vim 真彩色） |
 
 ### 用户自定义扩展点
 
@@ -49,7 +49,7 @@ make ohmyzsh    # 安装 oh-my-zsh（克隆上游仓库 + 符号链接 zshrc）
 - `~/.vimrc` → `vimrcs/init.vim`
 - `~/.config/nvim/init.vim` → `vimrcs/init.vim`
 
-使用 **vim-plug** 管理插件。`install-vim.sh` 优先从 `vendor/vim/` 本地复制（离线安装），没有则走网络下载。插件预下载：`make vim-plugins`，下载后提交到仓库即可实现离线安装。
+使用 **vim-plug** 管理插件，支持基线 vim 8.0+ / neovim 0.5+。`install-vim.sh` 优先从 `vendor/vim/` 本地复制（离线安装），没有则走网络下载；plug.vim 同时部署到 vim（`~/.vim/autoload/`）与 neovim（`~/.local/share/nvim/site/autoload/`）各自的路径（nvim 的 runtimepath 不含 `~/.vim`）。插件预下载：`make vim-plugins`，下载后提交到仓库即可实现离线安装。自动配对插件按编辑器分端加载：vim 用 auto-pairs，neovim 用 nvim-autopairs。
 
 ### 自定义主题
 
@@ -58,5 +58,5 @@ make ohmyzsh    # 安装 oh-my-zsh（克隆上游仓库 + 符号链接 zshrc）
 
 ### bin/ — 快捷脚本
 
-`bin/lnmp` — 管理 LNMP (nginx + php-fpm) 服务的脚本，支持 `start|stop|restart`，自动检测 Debian/Ubuntu/CentOS 并使用对应的 php-fpm 服务名。通过 `custom.sh` 中的 PATH 设置全局可用。
+`bin/lnmp` — 管理 LNMP (nginx + php-fpm) 服务的脚本，支持 `start|stop|restart`，自动探测实际安装的 php-fpm 服务名，支持 Debian/Ubuntu/CentOS/Arch 等 Linux 发行版。通过 `custom.sh` 中的 PATH 设置全局可用。
 

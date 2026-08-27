@@ -30,7 +30,13 @@ call plug#begin('~/.vim/plugged')
 
 " 插件列表
 Plug 'junegunn/vim-plug'
-Plug 'jiangmiao/auto-pairs'
+" 自动配对按编辑器分端加载：nvim 用维护中的 nvim-autopairs（要求 nvim 0.7+），
+" vim 用 auto-pairs（目前无维护中的双端替代品）
+if has('nvim')
+    Plug 'windwp/nvim-autopairs'
+else
+    Plug 'jiangmiao/auto-pairs'
+endif
 Plug 'chr4/nginx.vim'
 "Plug 'scrooloose/nerdcommenter'
 "Plug 'alvan/vim-closetag'
@@ -65,6 +71,12 @@ Plug 'morhetz/gruvbox'        " 主题
 " Plug 'jceb/vim-orgmode'
 
 call plug#end()
+
+" nvim-autopairs 的 Lua 配置（仅 nvim 执行此块；vim 不会解析 :lua 命令）。
+" pcall 兜底：插件未安装（如尚未 :PlugInstall）时静默跳过，避免启动报错
+if has('nvim')
+    lua pcall(function() require('nvim-autopairs').setup {} end)
+endif
 
 filetype plugin indent on
 
@@ -176,20 +188,24 @@ syntax enable
 set background=dark
 
 if $COLORTERM == 'truecolor' || $COLORTERM == 'gnome-terminal'
-    " GUI 终端：启用真彩色
+    " GUI 终端：启用真彩色（vim 需 7.4.1799+，用 has() 守卫；nvim 全版本支持）
     set t_Co=256
-    set termguicolors
+    if has('termguicolors')
+        set termguicolors
+    endif
 elseif $TERM =~ '256color'
     " 256 色终端（如 Windows Terminal SSH）
     set t_Co=256
 endif
 " 8 色终端（如 Xshell 默认 xterm）：不修改 t_Co，由 vim 自动检测
 
-try
+" gruvbox 在 8 色终端下会「加载成功但不定义任何高亮」（插件内部静默 finish），
+" 导致界面无色。先按终端颜色能力选主题，8 色终端真正落到 delek
+if &t_Co >= 256 || has('gui_running')
     colorscheme gruvbox
-catch
+else
     colorscheme delek
-endtry
+endif
 
 " Set extra options when running in GUI mode
 if has("gui_running")

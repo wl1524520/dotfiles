@@ -1,6 +1,6 @@
 # custome prompt 
 function prompt_char {
-	if [ $UID -eq 0 ]; then echo "#"; else echo $; fi
+	if [ $UID -eq 0 ]; then echo "#"; else echo '$'; fi
 }
 function prompt_color {
 	if [ $UID -eq 0 ]; then echo "red"; else echo "green"; fi

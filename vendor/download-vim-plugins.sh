@@ -2,7 +2,8 @@
 # 将 vim-plug 插件预下载到 vendor/vim/ 目录，方便离线安装
 set -e
 
-VENDOR_DIR=$(cd "$(dirname "$0")" && pwd)/vim
+# 用 BASH_SOURCE 而非 $0：脚本即使经 PATH 裸名调用也能定位到自身真实路径
+VENDOR_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/vim
 rm -rf "$VENDOR_DIR"
 mkdir -p "$VENDOR_DIR"
 
@@ -12,6 +13,7 @@ echo "==> 下载 vim-plugins 到 vendor/vim/ ..."
 PLUGINS=(
     "junegunn/vim-plug"
     "jiangmiao/auto-pairs"
+    "windwp/nvim-autopairs"
     "chr4/nginx.vim"
     "itchyny/lightline.vim"
     "morhetz/gruvbox"

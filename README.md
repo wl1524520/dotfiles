@@ -35,7 +35,7 @@ git pull
 
 
 ## 二、VIM 配置文件
-本配置文件适用于 vim 和 neovim ，其它类 vim 编辑器未做测试
+本配置文件适用于 vim 和 neovim（支持基线：vim 8.0+ / neovim 0.5+），其它类 vim 编辑器未做测试。自动配对插件按编辑器分端加载：vim 使用 auto-pairs，neovim 使用 nvim-autopairs。
 
 ### 2.1 插件管理
 使用 vim-plug 管理插件。安装后在 vim 中执行：
@@ -49,7 +49,8 @@ git pull
 ### 2.2 插件列表
 插件 | 功能
 ---|---
-jiangmiao/auto-pairs | 自动补全配对的括号等
+jiangmiao/auto-pairs | 自动补全配对的括号等（仅 vim）
+windwp/nvim-autopairs | 自动补全配对的括号等（仅 neovim 0.7+）
 chr4/nginx.vim | nginx 配置语法高亮
 itchyny/lightline.vim | 底部状态栏
 morhetz/gruvbox | 主题
@@ -57,7 +58,7 @@ morhetz/gruvbox | 主题
 ## 三、快捷脚本
 命令 | 参数 | 功能
 ---|---|---
-lnmp | start/stop/restart | CentOS/Debian/Ubuntu 启动/停止/重启 lnmp 服务
+lnmp | start/stop/restart | Linux 下启动/停止/重启 LNMP 服务（自动探测 php-fpm 服务名）
 
 ## 四、自定义配置（优先级最高）
 本配置会自动检测是否存在 ~/.profile_user 文件，如果存在，则会自动加载！

@@ -12,44 +12,59 @@ function show_usage()
 
 function echo_success()
 {
-    echo -e "\033[43;31m$*\033[0m"
+    echo -e "\033[32m$*\033[0m"
 }
 
-if [ `uname` = 'Linux' ]; then
-    export DIST=`lsb_release -i | awk -F : '{print $2}' | sed -e 's/^[\t]*//g' | sed -e 's/[ ]*$//g'`
-    echo $DIST
-    if [ $DIST == 'Ubuntu' ]; then
-        PHP_FPM_CMD='php8.3-fpm'
-    elif [ $DIST == 'Debian' ]; then
-        PHP_FPM_CMD='php8.3-fpm'
-    else
-        echo_success 'EXIT : Your OS is not Debian / Ubuntu'
-        exit -1
+# 探测实际安装的 php-fpm 服务名（php8.3-fpm / php8.2-fpm / php-fpm 等），
+# 不依赖发行版判断，任何 Linux 发行版通用
+function detect_php_fpm()
+{
+    local unit
+    unit=$(systemctl list-unit-files 2>/dev/null | awk '{print $1}' | grep -E '^php[0-9.]*-fpm\.service$' | head -n 1)
+    if [ -n "$unit" ]; then
+        echo "${unit%.service}"
+        return 0
     fi
+    # 兜底：无 systemd 的系统（如 CentOS 6）查找 /etc/init.d/ 下的服务脚本
+    for f in /etc/init.d/php*-fpm; do
+        if [ -x "$f" ]; then
+            echo "$(basename "$f")"
+            return 0
+        fi
+    done
+    echo 'php-fpm'
+}
+
+if [ "$(uname)" = 'Linux' ]; then
+    export DIST=$(lsb_release -i 2>/dev/null | awk -F : '{print $2}' | sed -e 's/^[\t]*//g' | sed -e 's/[ ]*$//g')
+    echo "$DIST"
+    PHP_FPM_CMD=$(detect_php_fpm)
+    echo "Detected php-fpm service: $PHP_FPM_CMD"
 else
     echo_success 'EXIT : Your OS is not Linux'
-    exit -1
+    exit 1
 fi
 
 if [ $# != 1 ];then
-    show_usage $0
+    show_usage
     exit 1
 fi
 
 case $1 in
     start)
-        nginx -t && systemctl start ${NG_CMD} && systemctl start ${PHP_FPM_CMD} && echo_success 'LNMP Server Start Success' 
+        nginx -t && systemctl start "${NG_CMD}" && systemctl start "${PHP_FPM_CMD}" && echo_success 'LNMP Server Start Success'
         ;;
 
     stop)
-        systemctl stop ${NG_CMD} && systemctl stop ${PHP_FPM_CMD} && echo_success 'LNMP Server Stop Success' 
+        systemctl stop "${NG_CMD}" && systemctl stop "${PHP_FPM_CMD}" && echo_success 'LNMP Server Stop Success'
         ;;
 
     restart)
-        nginx -t && systemctl restart ${NG_CMD} && systemctl restart ${PHP_FPM_CMD} && echo_success 'LNMP Server Restart Success' 
+        nginx -t && systemctl restart "${NG_CMD}" && systemctl restart "${PHP_FPM_CMD}" && echo_success 'LNMP Server Restart Success'
         ;;
 
     *)
-        show_usage $0
+        show_usage
+        exit 1
         ;;
 esac

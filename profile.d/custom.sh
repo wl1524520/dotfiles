@@ -10,13 +10,8 @@ alias w='w -i'
 alias dc='docker compose'
 alias sail='bash vendor/bin/sail'
 
-# vim or neovim , this is a question
-if type nvim > /dev/null 2>&1; then
-    alias vim='nvim'
-    alias vi='nvim'
-else
-    alias vi='vim'
-fi
+# vi 指向 vim；vim 与 nvim 各归各位，互不别名
+alias vi='vim'
 
 # AI Agents Path
 AGENTS_PATH="$HOME/.opencode/bin:$HOME/.kimi-code/bin"
