@@ -64,6 +64,9 @@ lnmp | start/stop/restart | Linux 下启动/停止/重启 LNMP 服务（自动�
 本配置会自动检测是否存在 ~/.profile_user 文件，如果存在，则会自动加载！
 
 例如：在 ~/.profile_user 文件中增加如下变量，则可以开启远程 Linux 系统的 vim 真彩色主题
+（SSH 不会转发客户端的 COLORTERM，必须在远端自行 export）
 ```bash
 export COLORTERM='truecolor'
 ```
+
+> **Xshell 终端提示**：真彩色还需客户端支持。Xshell 6 Build 0181 起支持 24-bit 真彩色，需在「工具 → 选项 → 高级」终端中勾选「使用本色」（英文界面为 "Use true color"，中文译名不含「真彩色」三字）并**完全退出重启 Xshell** 才生效。TERM 保持默认 xterm 即可，vim 真彩色不依赖 TERM；若希望其它终端工具也获得 256 色环境，可将会话属性 → 连接 → 终端 → 终端类型手动输入 `xterm-256color`（下拉列表无此选项）。
