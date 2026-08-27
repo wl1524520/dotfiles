@@ -18,8 +18,11 @@ else
     alias vi='vim'
 fi
 
+# AI Agents Path
+AGENTS_PATH="$HOME/.opencode/bin:$HOME/.kimi-code/bin"
+
 # set PATH
-export PATH=$PATH:$HOME/.bin:$HOME/bin:$HOME/.dotfiles/bin:$HOME/.composer/vendor/bin:$HOME/.local/bin
+export PATH="$PATH:$HOME/.bin:$HOME/bin:$HOME/.dotfiles/bin:$HOME/.composer/vendor/bin:$HOME/.local/bin:$AGENTS_PATH"
 
 # For user
 if [ -f ~/.profile_user  ]; then
